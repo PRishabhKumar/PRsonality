@@ -7,8 +7,21 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 **PRsonality** is a premium, AI-powered codebase auditor that doesn't just review your code—it analyzes it with character. By blending high-performance AI reasoning with high-fidelity UI design, PRsonality provides deep technical insights through distinct professional personas.
+
+<br />
+
+<div align="center">
+
+<a href="https://prsonality.vercel.app/">
+  <img src="https://img.shields.io/badge/EXPERIENCE-PRSONALITY-06B6D4?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Live Demo" height="45" />
+</a>
+
+</div>
+
+<br />
 
 [Problem & Solution](#-the-core-challenge) • [Features](#-key-features) • [AI Personas](#-strategic-ai-personas) • [Installation](#-getting-started) • [Technical Deep Dive](#-technical-deep-dive)
 
