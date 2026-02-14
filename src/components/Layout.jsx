@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import AuroraBackground from "./AuroraBackground.jsx";
@@ -7,6 +8,13 @@ import { useCursor } from "../context/CursorContext";
 
 const Layout = ({ children }) => {
   const { setCursorVariant } = useCursor();
+
+  const navLinks = [
+    { name: "HOME", path: "/" },
+    { name: "FEATURES", path: "/features" },
+    { name: "CONTACT", path: "/contact" },
+  ];
+
   return (
     <AuroraBackground>
       {/* Navigation */}
@@ -16,8 +24,9 @@ const Layout = ({ children }) => {
         transition={{ duration: 0.8 }}
         className="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-6 md:px-12 backdrop-blur-[2px]"
       >
-        <div
-          className="flex items-center gap-2 group cursor-none"
+        <Link
+          to="/"
+          className="flex items-center gap-2 group cursor-none decoration-transparent"
           onMouseEnter={() => setCursorVariant("button")}
           onMouseLeave={() => setCursorVariant("default")}
         >
@@ -28,6 +37,25 @@ const Layout = ({ children }) => {
           <span className="text-lg font-bold font-display tracking-tight text-white/90 group-hover:text-white transition-colors">
             PRsonality
           </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              onMouseEnter={() => setCursorVariant("button")}
+              onMouseLeave={() => setCursorVariant("default")}
+              className={({ isActive }) =>
+                `text-xs font-mono-space tracking-[0.2em] cursor-none transition-all duration-300 hover:text-white ${
+                  isActive ? "text-white" : "text-white/40"
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
         </div>
 
         <a
