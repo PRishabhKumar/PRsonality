@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
       </motion.nav>
 
       {/* Main Content */}
-      <main className="min-h-screen flex flex-col pt-32 pb-20 px-6 max-w-7xl mx-auto">
+      <main className="flex-1 flex flex-col pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
         {children}
       </main>
 
