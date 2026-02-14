@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AuroraBackground = ({ children }) => {
   return (
-    <div className="min-h-screen relative w-full overflow-x-hidden bg-[#030014] text-white">
+    <div className="min-h-screen relative w-full bg-[#030014] text-white">
       {/* Animated Gradient Orbs */}
       <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-violet-600/10 rounded-full blur-[128px] animate-float-slow" />
       <div

@@ -1,5 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+import {brutallyHonestReviewPrompt, cto_review_prompt, kind_senior_engineer_prompt, getErrorLocationPrompt, getCorrectionPrompt} from "../../prompts/prompts.js"
+
 const API_KEY = import.meta.env.VITE_SECOND_GEMINI_API_KEY;
 
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -13,9 +15,9 @@ const jsonModel = genAI.getGenerativeModel({
 });
 
 const PERSONALITY_PROMPTS = {
-  "Kind Senior Engineer": import.meta.env.VITE_KIND_SENIOR_ENGINEER_PROMPT,
-  "Brutally Honest Reviewer": import.meta.env.VITE_BRUTALLY_HONEST_PROMPT,
-  "Startup CTO": import.meta.env.VITE_STARTUP_CTO_PROMPT,
+  "Kind Senior Engineer": kind_senior_engineer_prompt,
+  "Brutally Honest Reviewer": brutallyHonestReviewPrompt,
+  "Startup CTO": cto_review_prompt,
 };
 
 export const analyzeRepo = async (repoData, personality) => {
@@ -116,7 +118,7 @@ export const getErrorLocation = async (errorInfo, files) => {
     }
 
     const prompt = `
-      ${import.meta.env.VITE_GET_ERROR_LOCATION_PROMPT}
+      ${getErrorLocationPrompt}
 
       Here is the issue: ${errorInfo}
 
@@ -156,7 +158,7 @@ export const handleGetPrompt = async (errorInfo) => {
       throw new Error("There was not API key provided...");
     }
     const result = await jsonModel.generateContent(
-      import.meta.env.VITE_GET_CORRECTION_PROMPT +
+      getCorrectionPrompt +
         `Here is the issue : ${errorInfo}`,
     );
     const response = await result.response;

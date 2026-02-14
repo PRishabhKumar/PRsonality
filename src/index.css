@@ -42,6 +42,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -68,7 +69,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-analyzeButton{
+analyzeButton {
   background-color: white !important;
   opacity: 1 Import !important;
 }

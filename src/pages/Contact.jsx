@@ -4,13 +4,14 @@ import {
   Mail,
   Github,
   Linkedin,
-  Twitter,
+  Globe,
   Send,
   MapPin,
   Phone,
   ArrowRight,
 } from "lucide-react";
 import { useCursor } from "../context/CursorContext";
+import "./Contact.css";
 
 function Contact() {
   const { setCursorVariant, setCursorSize, setCursorStyle } = useCursor();
@@ -33,11 +34,11 @@ function Contact() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-bold font-display text-white tracking-tight"
+          className="text-6xl md:text-8xl font-bold font-display text-white tracking-tight"
         >
-          Get in <br />
+          Let's{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-white">
-            Touch
+            Spark a Conversation
           </span>
         </motion.h1>
         <motion.p
@@ -90,35 +91,43 @@ function Contact() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-12">
             <h3 className="text-white/70 font-semibold tracking-wider text-sm uppercase">
-              Social Connect
+              Connect me though my socials
             </h3>
-            <div className="flex gap-6">
+            <div className="flex gap-6 pt-4">
               {[
                 {
                   icon: <Github className="w-6 h-6" />,
                   color: "hover:bg-white/10 hover:text-white",
                   label: "GitHub",
+                  url: "https://github.com/PRishabhKumar",
                 },
                 {
                   icon: <Linkedin className="w-6 h-6" />,
                   color: "hover:bg-emerald-500/20 hover:text-emerald-400",
                   label: "LinkedIn",
+                  url: "https://www.linkedin.com/in/p-rishabh-kumar-9336b0289/",
                 },
                 {
-                  icon: <Twitter className="w-6 h-6" />,
+                  icon: <Globe className="w-6 h-6" />,
                   color: "hover:bg-white/10 hover:text-white",
-                  label: "Twitter",
+                  label: "Portfolio",
+                  url: "https://rishiverse.framer.website/",
                 },
               ].map((social, i) => (
-                <button
-                  key={i}
-                  title={social.label}
-                  className={`w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 transition-all duration-300 ${social.color} hover:scale-110`}
-                >
-                  {social.icon}
-                </button>
+                <div key={i} className="social-icon-wrapper">
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title=""
+                    className={`w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 transition-all duration-300 ${social.color} hover:scale-110`}
+                  >
+                    {social.icon}
+                  </a>
+                  <span className="social-tooltip">{social.label}</span>
+                </div>
               ))}
             </div>
           </div>
