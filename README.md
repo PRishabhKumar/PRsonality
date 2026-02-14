@@ -10,9 +10,23 @@
 
 **PRsonality** is a premium, AI-powered codebase auditor that doesn't just review your code—it analyzes it with character. By blending high-performance AI reasoning with high-fidelity UI design, PRsonality provides deep technical insights through distinct professional personas.
 
-[Features](#-key-features) • [Installation](#-getting-started) • [Tech Stack](#-technology-stack) • [Technical Deep Dive](#-technical-deep-dive)
+[Problem & Solution](#-the-core-challenge) • [Features](#-key-features) • [AI Personas](#-strategic-ai-personas) • [Installation](#-getting-started) • [Technical Deep Dive](#-technical-deep-dive)
 
 </div>
+
+---
+
+## 🌩️ The Core Challenge: Why PRsonality?
+
+Manual code reviews are vital but suffer from three chronic friction points:
+
+1.  **Subjectivity & Bias**: Different engineers focus on different things, often missing the "big picture" or getting bogged down in style nitpicks.
+2.  **The "Where" Lag**: Identifying _that_ an error exists is easy; tracing it back to the exact line in a complex directory structure is time-consuming.
+3.  **The Context Deficit**: Standard AI reviewers often treat code as isolated snippets, failing to understand the architecture or the "personality" of the project.
+
+### 💡 The PRsonality Solution
+
+PRsonality solves this by treating your repository as a living organism. Using our **"Mental Cloning"** technology, it selectively ingests core files to build a holistic understanding. When it finds a flaw, it doesn't just tell you—it **Traces Error Locations** with surgical precision and **Generates Implementation Plans** (Fix Prompts) that account for your project's specific context.
 
 ---
 
@@ -24,17 +38,23 @@
 - **Trace Error Location**: Real-time identification of specific files and line numbers where issues reside, including snippets and detailed context.
 - **AI-Powered Solutions**: Generates structured implementation plans and corrective prompts to fix identified issues instantly.
 
-### 🎭 AI Personas
-
-- 👩‍💻 **Kind Senior Engineer**: Constructive, growth-oriented feedback with a focus on mentorship.
-- 😈 **Brutally Honest Reviewer**: Direct, blunt, and uncompromising critique of production stability.
-- 🚀 **Startup CTO**: High-level focus on scalability, technical debt, and business velocity.
-
 ### 🎨 Visual Excellence
 
 - **Aurora Background**: Fluid, animated gradient orbs with noise texture overlays for a premium aesthetic.
 - **Glassmorphism UI**: High-contrast, translucent components with sophisticated backdrop blurring.
 - **Interactive HUD**: System-style overview dashboards and diagnostic feeds.
+
+---
+
+## 🎭 Strategic AI Personas
+
+Choosing the right reviewer is half the battle. PRsonality offers three distinct minds tailored for different stages of the development lifecycle.
+
+| Persona                         | Philosophy                                        | Ideal For                                                                                        | Avoid If...                                                                     |
+| :------------------------------ | :------------------------------------------------ | :----------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+| 👩‍💻 **Kind Senior Engineer**     | Mentorship and long-term growth.                  | **Learning phases**, junior devs, or when you need gentle guidance on best practices.            | You're hours away from a critical production launch and need a "hard truth."    |
+| 😈 **Brutally Honest Reviewer** | Efficiency and production-readiness at all costs. | **Pre-merge audits**, mission-critical systems, or when you suspect technical debt is hiding.    | You are having a bad day or just looking for a pat on the back.                 |
+| 🚀 **Startup CTO**              | Velocity, scalability, and business impact.       | **Prototype phases**, rapidly scaling apps, or when you need to decide if to "refactor or ship." | You are building a safety-critical medical device (CTOs take calculated risks). |
 
 ---
 
@@ -72,20 +92,6 @@
    ```bash
    npm run dev
    ```
-
----
-
-## 🛠️ Technology Stack
-
-| Layer          | Technology              |
-| :------------- | :---------------------- |
-| **Frontend**   | React 19 (Vite)         |
-| **Styling**    | Tailwind CSS 4          |
-| **Animations** | Framer Motion           |
-| **Icons**      | Lucide React            |
-| **AI Engine**  | Google Gemini 2.5 Flash |
-| **State**      | React Context API       |
-| **Networking** | Axios                   |
 
 ---
 
