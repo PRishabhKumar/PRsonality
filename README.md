@@ -1,4 +1,4 @@
-# 🤖 PRsonality — AI Code Reviewer with an Attitude
+# PRsonality — AI Code Reviewer with an Attitude
 
 <div align="center">
 
@@ -79,30 +79,32 @@ Choosing the right reviewer is half the battle. PRsonality offers three distinct
 - npm or yarn
 - A Google Gemini API Key from [Google AI Studio](https://aistudio.google.com/)
 
-### Installation
+### Installation & Local Development
 
 1. **Clone the repository**
-
    ```bash
    git clone https://github.com/PRishabhKumar/PRsonality.git
    cd PRsonality
    ```
 
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment**
-   Create a `.env` file in the root directory:
-
+2. **Configure Environment**
+   Create a `.env` file in the **root** directory:
    ```env
    VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   VITE_API_BASE_URL=http://localhost:3000/api/v1
    ```
 
-4. **Run Development Server**
+3. **Setup Backend**
    ```bash
+   cd Backend
+   npm install
+   npm start
+   ```
+
+4. **Setup Frontend (New Terminal)**
+   ```bash
+   # From the root directory
+   npm install
    npm run dev
    ```
 
@@ -110,28 +112,27 @@ Choosing the right reviewer is half the battle. PRsonality offers three distinct
 
 ## 🔬 Technical Deep Dive
 
-### 🖱️ Momentum-Based Cursor Physics
-
-PRsonality features a custom cursor system built on a custom physics engine:
-
-- **Spring Physics**: Uses `useSpring` with targeted damping (20) and stiffness (300) to eliminate input lag.
-- **Jelly Deformation**: Calculates movement velocity to dynamically "stretch" and rotate the cursor in the direction of movement.
-- **Adaptive Morphing**: The cursor intelligently transforms into an I-Beam for text inputs and Bracketed Corners `[]` for buttons via a global `CursorContext`.
-- **Aurora Trail**: A secondary "glow" follower with heavier mass creates a soft, luminous trail.
+### 🏗️ Architecture: The Hybrid Core
+PRsonality uses a decoupled architecture to separate intense AI processing from the high-fidelity UI:
+- **Frontend (Vite/React)**: Handles the "Mental Cloning" file selector and the premium UI/UX.
+- **Backend (Node.js/Express)**: Manages AI context construction and performs robust JSON parsing to ensure AI responses are always valid and actionable.
 
 ### 🧩 Directory Structure
 
 ```text
 PRsonality/
-├── src/
-│   ├── components/     # High-fidelity UI elements (ReviewResult, CustomCursor)
-│   ├── context/        # Global state management (CursorContext)
-│   ├── pages/          # Core views (Home, Features, Contact)
-│   ├── services/       # AI (Gemini) and GitHub API integrations
-│   └── assets/         # Static visual resources
-├── prompts/            # System-level AI personality definitions
-├── public/             # Static public assets
-└── tailwind.config.js  # Custom design system tokens
+├── Backend/            # Express.js Server
+│   ├── Controllers/    # AI reasoning & JSON parsing logic
+│   ├── Routes/         # API endpoint definitions
+│   ├── prompts/        # System-level AI personality definitions
+│   └── start.js        # Server entry point
+├── src/                # React Frontend
+│   ├── components/     # UI elements (ReviewResult, CustomCursor)
+│   ├── context/        # Cursor & UI state management
+│   ├── pages/          # Core views (Home, Features, etc.)
+│   └── services/       # GitHub & Backend API integrations
+├── tailwind.config.js  # Custom design system tokens
+└── .env                # Global configuration (Ignored by Git)
 ```
 
 ---
